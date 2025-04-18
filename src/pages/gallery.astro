@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Gallery - GeoBud">
+  <h1>Gallery</h1>
+  <div class="gallery">
+    <div class="gallery-item">Coming soon...</div>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .gallery-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    color: #666;
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+const navItems = [
+  { path: '/', label: 'Home' },
+  { path: '/about', label: 'About us' },
+  { path: '/gallery', label: 'Gallery' },
+  { path: '/contact', label: 'Contact' }
+];
+---
+
+<nav>
+  <div class="nav-content">
+    <a href="/" class="logo">GeoBud</a>
+    <ul class="nav-links">
+      {navItems.map(item => (
+        <li>
+          <a href={item.path} class={Astro.url.pathname === item.path ? 'active' : ''}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem;
+  }
+
+  .nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover, .nav-links a.active {
+    color: #333;
+  }
+
+  @media (max-width: 768px) {
+    .nav-content {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+  }
+</style>
