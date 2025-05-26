@@ -22,10 +22,6 @@ import Layout from '../layouts/Layout.astro';
           <div class="overlay"></div>
           <h2>Geodezja</h2>
         </div>
-        <div class="service-card real-estate">
-          <div class="overlay"></div>
-          <h2>Pośrednictwo<br/>nieruchomości</h2>
-        </div>
       </div>
     </div>
 
@@ -95,8 +91,8 @@ import Layout from '../layouts/Layout.astro';
   .services-grid {
     flex: 2;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
     height: 100%;
   }
 
@@ -108,6 +104,7 @@ import Layout from '../layouts/Layout.astro';
     color: white;
     background-size: cover;
     background-position: center;
+    min-height: 100%;
   }
 
   .service-card .overlay {
@@ -126,11 +123,6 @@ import Layout from '../layouts/Layout.astro';
 
   .geodesy {
     background-image: url('/Geo.png');
-    background-size: auto;
-  }
-
-  .real-estate {
-    background-image: url('/Building.png');
     background-size: auto;
   }
 
@@ -187,3 +179,4 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
+

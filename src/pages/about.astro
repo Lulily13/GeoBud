@@ -2,18 +2,159 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="About Us - GeoBud">
-  <h1>About Us</h1>
-  <p>GeoBud is your ultimate companion for exploring the fascinating world of geology. Our team of passionate geologists and outdoor enthusiasts are dedicated to making geological discoveries accessible to everyone.</p>
+<Layout title="Nasze usługi - GeoBud">
+  <h1>Nasze usługi</h1>
+
+  <section class="service-section">
+    <img src="/aboutus_waterworks.jpg" alt="Wodociągi">
+    <div class="content">
+      <h2>Wodociągi</h2>
+      <ul>
+        <li><strong>Instalacja wodociągowa</strong>: Kompleksowa budowa i instalacja systemów wodociągowych.</li>
+        <li><strong>Serwis wodociągowy</strong>: Naprawy i konserwacja istniejących sieci wodociągowych.</li>
+        <li><strong>Konsultacje</strong>: Doradztwo w zakresie projektowania i budowy systemów wodociągowych.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-section reverse">
+    <img src="/aboutus_geodesy.jpg" alt="Geodezja">
+    <div class="content">
+      <h2>Geodezja</h2>
+      <ul>
+        <li><strong>Mapy geodezyjne</strong>: Przygotowanie map do celów projektowych oraz podziału nieruchomości.</li>
+        <li><strong>Pomiary terenowe</strong>: Realizacja pomiarów terenowych do celów budowlanych i inwestycyjnych.</li>
+        <li><strong>Rozgraniczenia</strong>: Wykonywanie rozgraniczeń działek i ustalanie granic nieruchomości.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="content">
+      <h2>Pośrednictwo nieruchomości</h2>
+      <ul>
+        <li><strong>Sprzedaż nieruchomości</strong>: Pomoc w sprzedaży nieruchomości oraz zarządzanie ofertami.</li>
+        <li><strong>Wynajem nieruchomości</strong>: Pośrednictwo w wynajmie mieszkań, domów oraz lokali użytkowych.</li>
+        <li><strong>Poradnictwo prawne</strong>: Doradztwo prawne związane z obrotem nieruchomościami oraz umowami najmu.</li>
+      </ul>
+    </div>
+    <img src="/aboutus_realestate.jpg" alt="Pośrednictwo nieruchomości">
+  </section>
 </Layout>
 
 <style>
   h1 {
-    color: #333;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #222;
+    margin: 3rem 0 2rem;
+    font-weight: 600;
+  }
+
+  .service-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #eee;
+    flex-wrap: wrap;
+  }
+
+  .service-section.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .service-section img {
+    flex: 0 0 40%;
+    max-width: 420px;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .content {
+    flex: 1 1 45%;
+    max-width: 600px;
+  }
+
+  .content h2 {
+    font-size: 1.75rem;
+    color: #111;
     margin-bottom: 1rem;
   }
-  p {
-    color: #666;
+
+  .content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content li {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
     line-height: 1.6;
+  }
+
+  .content li strong {
+    color: #000;
+  }
+
+  /* Responsive breakpoints */
+
+  @media (max-width: 1024px) {
+    .service-section {
+      gap: 1.5rem;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+    }
+
+    .content li {
+      font-size: 0.95rem;
+    }
+
+    .service-section img {
+      height: 260px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .service-section {
+      flex-direction: column !important;
+      text-align: center;
+    }
+
+    .service-section img {
+      height: 220px;
+    }
+
+    .content {
+      padding-top: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    .service-section img {
+      height: 180px;
+    }
+
+    .content h2 {
+      font-size: 1.3rem;
+    }
+
+    .content li {
+      font-size: 0.9rem;
+    }
   }
 </style>
