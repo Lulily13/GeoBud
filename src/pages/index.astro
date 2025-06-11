@@ -36,8 +36,17 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+
   .full-screen-section {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
@@ -46,7 +55,6 @@ import Layout from '../layouts/Layout.astro';
     flex: 1;
     display: flex;
     flex-direction: row;
-    overflow: hidden;
   }
 
   .hero-section {
@@ -65,7 +73,7 @@ import Layout from '../layouts/Layout.astro';
 
   h1 {
     font-size: 6.5rem;
-    font-weight: 300;
+    font-weight: 100;
     line-height: 1;
     margin: 0;
     letter-spacing: 0.1em;
@@ -93,7 +101,6 @@ import Layout from '../layouts/Layout.astro';
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    height: 100%;
   }
 
   .service-card {
@@ -104,7 +111,9 @@ import Layout from '../layouts/Layout.astro';
     color: white;
     background-size: cover;
     background-position: center;
-    min-height: 100%;
+    height: 100%;
+    min-height: 300px;
+    width: 100%;
   }
 
   .service-card .overlay {
@@ -118,12 +127,10 @@ import Layout from '../layouts/Layout.astro';
 
   .waterworks {
     background-image: url('/Pipes.png');
-    background-size: auto;
   }
 
   .geodesy {
     background-image: url('/Geo.png');
-    background-size: auto;
   }
 
   .service-card h2 {
@@ -138,7 +145,6 @@ import Layout from '../layouts/Layout.astro';
     background: #2f3c7e;
     color: white;
     padding: 1.5rem 2rem;
-    flex-shrink: 0;
   }
 
   .contact-section h3 {
@@ -159,6 +165,7 @@ import Layout from '../layouts/Layout.astro';
     font-size: 1.2rem;
   }
 
+  /* MEDIA QUERY for mobile screens */
   @media (max-width: 768px) {
     .opening-section {
       flex-direction: column;
@@ -166,11 +173,11 @@ import Layout from '../layouts/Layout.astro';
 
     .services-grid {
       grid-template-columns: 1fr;
-      height: auto;
     }
 
     .service-card {
-      height: 200px;
+      height: 250px;
+      min-height: unset;
     }
 
     .contact-info {
@@ -179,4 +186,3 @@ import Layout from '../layouts/Layout.astro';
     }
   }
 </style>
-

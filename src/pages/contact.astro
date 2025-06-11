@@ -8,15 +8,24 @@ import Layout from '../layouts/Layout.astro';
       <h1>KONTAKT</h1>
       <ul class="contact-details">
         <li><span class="icon">📞</span>123 456 789 &nbsp; lub &nbsp; 321 654 987</li>
-        <li><span class="icon">@</span>geobud@gmail.com</li>
-        <li><span class="icon">📝</span>Formularz kontaktowy</li>
+        <li><span class="icon">📩</span>geobud@gmail.com</li>
         <li><span class="icon">🏢</span>Ul. Przykładowa 123/1, Kraków</li>
+        <li><span class="icon">📍</span>Znajdź nas na Google Maps</li>
+        <li><iframe
+            src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.735841380496!2d19.943118377714338!3d50.07250857152252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b033403ffff%3A0xa382045d1cc1362b!2sPawia%2023%2C%2031-154%20Krak%C3%B3w!5e0!3m2!1sen!2spl!4v1749640030866!5m2!1sen!2spl"
+            width="600"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe></li>
       </ul>
     </div>
 
     <div class="contact-right">
       <form class="contact-form">
-        <h2>FORMULARZ</h2>
+        <h2>SKONTAKTUJ SIĘ Z NAMI</h2>
 
         <label>
           <span>Imię</span>
@@ -50,9 +59,9 @@ import Layout from '../layouts/Layout.astro';
 
   <style>
     .contact-page {
+      font-family: Roboto, sans-serif;
       display: flex;
       min-height: 100vh;
-      font-family: sans-serif;
     }
 
     .contact-left {

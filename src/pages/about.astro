@@ -3,52 +3,81 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Nasze usługi - GeoBud">
-  <h1>Nasze usługi</h1>
+
+  <h1>O nas</h1>
+  <div class="service-section description">
+    Geobud to firma, która powstała z połączenia dwóch dziedzin: geodezji i projektowania sieci wodno-kanalizacyjnych oraz gazowych.
+    Działamy wspólnie, łącząc nasze kompetencje, doświadczenie i zaangażowanie, aby zapewnić klientom kompleksową i rzetelną obsługę inwestycji – od pierwszego pomiaru w terenie aż po gotową dokumentację techniczną.
+  </div>
 
   <section class="service-section">
-    <img src="/aboutus_waterworks.jpg" alt="Wodociągi">
+    <img src="/aboutus_waterworks.jpg" alt="Projektowanie sieci wod-kan-gaz">
     <div class="content">
-      <h2>Wodociągi</h2>
-      <ul>
-        <li><strong>Instalacja wodociągowa</strong>: Kompleksowa budowa i instalacja systemów wodociągowych.</li>
-        <li><strong>Serwis wodociągowy</strong>: Naprawy i konserwacja istniejących sieci wodociągowych.</li>
-        <li><strong>Konsultacje</strong>: Doradztwo w zakresie projektowania i budowy systemów wodociągowych.</li>
-      </ul>
+      <h2>Projektowanie sieci wod-kan-gaz</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">• Projekty przyłączy i sieci wodociągowych</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Kanalizacja sanitarna i deszczowa</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Sieci gazowe</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Dokumentacje projektowe i wykonawcze</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Uzgodnienia z gestorami sieci i urzędami</div>
+        <div class="accordion-content">...</div>
+      </div>
     </div>
   </section>
 
   <section class="service-section reverse">
     <img src="/aboutus_geodesy.jpg" alt="Geodezja">
     <div class="content">
-      <h2>Geodezja</h2>
-      <ul>
-        <li><strong>Mapy geodezyjne</strong>: Przygotowanie map do celów projektowych oraz podziału nieruchomości.</li>
-        <li><strong>Pomiary terenowe</strong>: Realizacja pomiarów terenowych do celów budowlanych i inwestycyjnych.</li>
-        <li><strong>Rozgraniczenia</strong>: Wykonywanie rozgraniczeń działek i ustalanie granic nieruchomości.</li>
-      </ul>
+      <h2>Usługi geodezyjne</h2>
+      <div class="accordion-item">
+        <div class="accordion-header">• Mapy do celów projektowych (do pozwolenia na budowę)</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Tyczenie budynków, przyłączy, granic</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Inwentaryzacje powykonawcze</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Podziały działek, wznowienia granic</div>
+        <div class="accordion-content">...</div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">• Geodezyjna obsługa inwestycji</div>
+        <div class="accordion-content">...</div>
+      </div>
     </div>
   </section>
 
-  <section class="service-section">
-    <div class="content">
-      <h2>Pośrednictwo nieruchomości</h2>
-      <ul>
-        <li><strong>Sprzedaż nieruchomości</strong>: Pomoc w sprzedaży nieruchomości oraz zarządzanie ofertami.</li>
-        <li><strong>Wynajem nieruchomości</strong>: Pośrednictwo w wynajmie mieszkań, domów oraz lokali użytkowych.</li>
-        <li><strong>Poradnictwo prawne</strong>: Doradztwo prawne związane z obrotem nieruchomościami oraz umowami najmu.</li>
-      </ul>
-    </div>
-    <img src="/aboutus_realestate.jpg" alt="Pośrednictwo nieruchomości">
-  </section>
 </Layout>
 
 <style>
+
   h1 {
     text-align: center;
     font-size: 2.5rem;
     color: #222;
     margin: 3rem 0 2rem;
     font-weight: 600;
+  }
+
+  .description {
+    font-weight: 300;
   }
 
   .service-section {
@@ -85,27 +114,48 @@ import Layout from '../layouts/Layout.astro';
   .content h2 {
     font-size: 1.75rem;
     color: #111;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Oswald', sans-serif;
   }
 
-  .content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+    padding: 2rem 0;
   }
 
-  .content li {
-    font-size: 1rem;
+  .accordion-header {
+    font-weight: 300;
+    font-size: 1.05rem;
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+    color: #222;
+  }
+
+  .accordion-header::after {
+    content: '▾';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-header.active::after {
+    transform: rotate(180deg);
+  }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.95rem;
     color: #444;
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    transition: max-height 0.4s ease;
+    padding-left: 1rem;
+    line-height: 1.5;
   }
 
-  .content li strong {
-    color: #000;
+  .accordion-content.open {
+    max-height: 300px;
   }
-
-  /* Responsive breakpoints */
 
   @media (max-width: 1024px) {
     .service-section {
@@ -116,12 +166,8 @@ import Layout from '../layouts/Layout.astro';
       font-size: 1.5rem;
     }
 
-    .content li {
-      font-size: 0.95rem;
-    }
-
-    .service-section img {
-      height: 260px;
+    .accordion-header {
+      font-size: 1rem;
     }
   }
 
@@ -153,8 +199,19 @@ import Layout from '../layouts/Layout.astro';
       font-size: 1.3rem;
     }
 
-    .content li {
-      font-size: 0.9rem;
+    .accordion-header {
+      font-size: 0.95rem;
     }
   }
 </style>
+
+<script type="module">
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      header.classList.toggle('active');
+      content.classList.toggle('open');
+    });
+  });
+</script>
+
